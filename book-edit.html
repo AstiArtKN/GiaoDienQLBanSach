@@ -12,6 +12,10 @@
       rel="stylesheet"
     />
     <!-- style css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Quản Lý Bán Sách</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -281,12 +285,39 @@
             <a href="" class="book-editor__add btn">Thêm Sách</a>
           </div>
           <div class="book-editor__tool">
-            <h2 class="dashboard__mid-title">Danh Sách Sản Phẩm</h2>
-            <a href="" class="book-editor__add btn">Thêm Sách</a>
+            <div class="show-entries">
+              <label for="entries">Xem</label>
+              <form method="GET" action="">
+                <select id="entries" name="entries">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+              </form>
+              <span>Mục</span>
+            </div>
             <div class="form-wrapper">
               <form action="">
-                <input type="search" id="search__book" name="search__book" pl />
-                <button type="submit" value="search"></button>
+                <div class="form-inside__container">
+                  <div class="book-editor__search">
+                    <input
+                      type="search"
+                      id="search__book"
+                      name="search__book"
+                      class="textarea-timsach"
+                    />
+                  </div>
+                  <div class="book-editor__btn">
+                    <button
+                      type="submit"
+                      value="search"
+                      class="btn btn-timsach"
+                    >
+                      Tìm kiếm sách
+                    </button>
+                  </div>
+                </div>
               </form>
             </div>
           </div>
@@ -304,7 +335,8 @@
                   <th>Thể Loại</th>
                   <th>Mô Tả</th>
                   <th>Giá</th>
-                  <th>Chỉnh Sửa</th>
+                  <th>Chỉnh sửa</th>
+                  <th>Xoá</th>
                 </tr>
               </thead>
               <tbody>
@@ -323,6 +355,21 @@
                   <td class="mota">
                     gia đình nhà Kamado vô tình bị một con quỷ bí ẩn sát hại. 2
                     anh em Kamado may mắn thoát nạn,...
+                  </td>
+                  <td>1Đ</td>
+                  <td>
+                    <a href="sua.php?id=1" class="btn btn-warning">
+                      <i class="fa-solid fa-pencil"></i>
+                    </a>
+                  </td>
+                  <td>
+                    <a
+                      href="xoa.php?id=1"
+                      class="btn btn-danger"
+                      onclick="return confirm('Bạn có chắc chắn muốn xoá không?')"
+                    >
+                      <i class="fa-solid fa-trash"></i>
+                    </a>
                   </td>
                 </tr>
               </tbody>

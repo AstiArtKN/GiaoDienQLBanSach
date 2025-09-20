@@ -18,6 +18,13 @@ body {
 }
 
 /* ==== Common ==== */
+input,
+textarea,
+select,
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
 a {
   text-decoration: none;
 }
@@ -392,7 +399,58 @@ td.dashboard-col-top-book {
   margin-left: -20px;
   margin-right: -20px;
 }
+
+.book-editor__tool {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-inside__container {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.dashboard__mid-title {
+  border-bottom: solid 1px var(--primary-color);
+  padding-bottom: 15px;
+}
+
+.show-entries {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.show-entries select {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1.4rem;
+}
+
+.btn-timsach {
+  border: transparent;
+  font-size: 1.4rem;
+  line-height: 32px;
+}
+.textarea-timsach {
+  color: var(--small-text-second);
+  font-size: 1.4rem;
+  border-radius: 12px;
+  line-height: 24px;
+  border: solid 1px var(--primary-color);
+}
+.textarea-timsach:focus {
+  border: solid 2px var(--primary-color);
+  outline: none;
+}
+
 .book-editor__table-wrapper {
+  margin-top: 30px;
   width: 100%;
   /* max-height: 500px; */
   overflow-x: auto;
@@ -402,7 +460,7 @@ td.dashboard-col-top-book {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed; /* Cố định layout, tránh co dồn */
-  min-width: 800px;
+  min-width: 600px;
 }
 .book-editor_table td,
 .book-editor_table th {
@@ -424,4 +482,18 @@ td.dashboard-col-top-book {
 .book-editor_table td.mota {
   white-space: normal;
   word-break: break-word;
+}
+.btn-warning,
+.btn-danger {
+  display: inline-block;
+  min-width: 40px;
+  line-height: 40px;
+  font-size: 1.4rem;
+  height: auto;
+}
+.btn-warning {
+  background: #dd6612;
+}
+.btn-danger {
+  background: #b72424;
 }
